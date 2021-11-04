@@ -1,0 +1,11 @@
+.productCard {
+  width: 257px;
+  height: 295px;
+  border: 2px solid #333333;
+}
+.productName {
+  color: #333333;
+}
+.productPrice {
+  color: #27ae60;
+}
