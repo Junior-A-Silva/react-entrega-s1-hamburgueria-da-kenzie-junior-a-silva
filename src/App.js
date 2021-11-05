@@ -54,40 +54,18 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
 
   function showProducts(searchInput) {
-    // setProducts([
-    //   ...products,
-    // {
-    //   id: 7,
-    //   name: "Bolacha",
-    //   category: "Alimmento",
-    //   price: 10,
-    //   img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
-    // },
-    // ]);
-    // <MenuContainer products={products} handleClick={handleClick} />;
+    setFilteredProducts(products.filter((item) => item.name === searchInput));
 
-    // setProducts([...products, { id: 7, name: "asdf" }]);
-    // <MenuContainer products={setProducts} handleClick={handleClick} />;
+    filteredProducts.map(
+      (item) => (item.id = Number(filteredProducts.indexOf(item)) + 1)
+    );
 
-    // setFilteredProducts([...filteredProducts, { id: 7, name: "asdf" }]);
-    // <MenuContainer products={filteredProducts} handleClick={handleClick} />;
-    setProducts([
-      ...products,
-      {
-        id: 7,
-        name: "Bolacha",
-        category: "Alimmento",
-        price: 10,
-        img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
-      },
-    ]);
-    // setFilteredProducts(products.filter((item) => item.name === searchInput));
-    <MenuContainer products={products} handleClick={handleClick} />;
+    <MenuContainer products={filteredProducts} handleClick={handleClick} />;
   }
 
   function handleClick(productId) {}
 
-  if (searchInput == "") {
+  if (searchInput === "") {
     return (
       <div className="App">
         <header>
@@ -99,13 +77,10 @@ function App() {
               value={searchInput}
               onChange={(event) => setSearchInput(event.target.value)}
             />
-            <button
-              onClick={() => showProducts(searchInput)}
-              id="addTodoButton"
-            >
-              Pesquisa
-            </button>
           </form>
+          <button onClick={() => showProducts(searchInput)} id="addTodoButton">
+            Pesquisa
+          </button>
         </header>
         <main>
           <MenuContainer products={products} handleClick={handleClick} />
@@ -124,16 +99,16 @@ function App() {
               value={searchInput}
               onChange={(event) => setSearchInput(event.target.value)}
             />
-            <button
-              onClick={() => showProducts(searchInput)}
-              id="addTodoButton"
-            >
-              Pesquisa
-            </button>
           </form>
+          <button onClick={() => showProducts(searchInput)} id="addTodoButton">
+            Pesquisa
+          </button>
         </header>
         <main>
-          {/* <MenuContainer products={products} handleClick={handleClick} /> */}
+          <MenuContainer
+            products={filteredProducts}
+            handleClick={handleClick}
+          />
         </main>
       </div>
     );

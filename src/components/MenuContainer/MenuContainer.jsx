@@ -3,9 +3,9 @@ function MenuContainer({ products, handleClick }) {
   return (
     <div>
       <ul>
-        {products.map((item) => (
+        {products.map((item, index) => (
           <li key={item.id}>
-            <Product products={products} id={Number(item.id) - 1} handleClick />
+            <Product products={products} id={Number(index)} handleClick />
           </li>
         ))}
       </ul>
