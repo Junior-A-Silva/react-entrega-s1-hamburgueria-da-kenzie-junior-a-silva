@@ -51,15 +51,93 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [searchInput, setSearchInput] = useState("");
 
-  function showProducts(params) {}
+  function showProducts(searchInput) {
+    // setProducts([
+    //   ...products,
+    // {
+    //   id: 7,
+    //   name: "Bolacha",
+    //   category: "Alimmento",
+    //   price: 10,
+    //   img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
+    // },
+    // ]);
+    // <MenuContainer products={products} handleClick={handleClick} />;
+
+    // setProducts([...products, { id: 7, name: "asdf" }]);
+    // <MenuContainer products={setProducts} handleClick={handleClick} />;
+
+    // setFilteredProducts([...filteredProducts, { id: 7, name: "asdf" }]);
+    // <MenuContainer products={filteredProducts} handleClick={handleClick} />;
+    setProducts([
+      ...products,
+      {
+        id: 7,
+        name: "Bolacha",
+        category: "Alimmento",
+        price: 10,
+        img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
+      },
+    ]);
+    // setFilteredProducts(products.filter((item) => item.name === searchInput));
+    <MenuContainer products={products} handleClick={handleClick} />;
+  }
 
   function handleClick(productId) {}
-  return (
-    <div className="App">
-      <MenuContainer products={products} handleClick={handleClick} />
-    </div>
-  );
+
+  if (searchInput == "") {
+    return (
+      <div className="App">
+        <header>
+          <div id="companyName01">Burger</div>
+          <div id="companyName02">Kenzie</div>
+          <form>
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(event) => setSearchInput(event.target.value)}
+            />
+            <button
+              onClick={() => showProducts(searchInput)}
+              id="addTodoButton"
+            >
+              Pesquisa
+            </button>
+          </form>
+        </header>
+        <main>
+          <MenuContainer products={products} handleClick={handleClick} />
+        </main>
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <header>
+          <div id="companyName01">Burger</div>
+          <div id="companyName02">Kenzie</div>
+          <form>
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(event) => setSearchInput(event.target.value)}
+            />
+            <button
+              onClick={() => showProducts(searchInput)}
+              id="addTodoButton"
+            >
+              Pesquisa
+            </button>
+          </form>
+        </header>
+        <main>
+          {/* <MenuContainer products={products} handleClick={handleClick} /> */}
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
