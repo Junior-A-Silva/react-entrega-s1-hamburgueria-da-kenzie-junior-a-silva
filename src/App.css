@@ -7,6 +7,7 @@ body {
 main {
   width: 1200px;
   justify-content: center;
+  margin: auto;
 }
 header {
   background-color: #e0e0e0;

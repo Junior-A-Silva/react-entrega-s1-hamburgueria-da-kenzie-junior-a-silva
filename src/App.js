@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import MenuContainer from "./components/MenuContainer/MenuContainer";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import ProductCart from "./components/ProductCart/ProductCart";
 
 function App() {
   const [products, setProducts] = useState([
@@ -52,6 +54,7 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [searchInput, setSearchInput] = useState("");
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   function showProducts(searchInput) {
     setFilteredProducts(products.filter((item) => item.name === searchInput));
@@ -60,10 +63,47 @@ function App() {
       (item) => (item.id = Number(filteredProducts.indexOf(item)) + 1)
     );
 
-    <MenuContainer products={filteredProducts} handleClick={handleClick} />;
+    <MenuContainer
+      products={filteredProducts}
+      handleClick={handleClick}
+      shoppingCart={shoppingCart}
+    />;
+  }
+  function cleanShoppingCart(shoppingCart) {
+    setShoppingCart([]);
   }
 
-  function handleClick(productId) {}
+  function handleClick(
+    productID,
+    productName,
+    productCategory,
+    produtctPrice,
+    productImg
+  ) {
+    let isInTheCart = false;
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].name === productName) {
+        isInTheCart = true;
+      }
+    }
+
+    if (isInTheCart === false) {
+      setShoppingCart([
+        ...shoppingCart,
+        {
+          id: shoppingCart.length + 1,
+          name: productName,
+          category: productCategory,
+          price: produtctPrice,
+          img: productImg,
+        },
+      ]);
+    }
+
+    filteredProducts.map(
+      (item) => (item.id = Number(filteredProducts.indexOf(item)) + 1)
+    );
+  }
 
   if (searchInput === "") {
     return (
@@ -83,7 +123,21 @@ function App() {
           </button>
         </header>
         <main>
-          <MenuContainer products={products} handleClick={handleClick} />
+          <MenuContainer
+            products={products}
+            handleClick={handleClick}
+            shoppingCart={shoppingCart}
+          />
+          <section id="shoppingCart">
+            <div>
+              <h2 id="shoppingCart">Carrinho de compras</h2>
+              {/* Aqui vai o carrinho */}
+              <ShoppingCart
+                products={shoppingCart}
+                cleanShoppingCart={cleanShoppingCart}
+              />
+            </div>
+          </section>
         </main>
       </div>
     );
@@ -109,6 +163,15 @@ function App() {
             products={filteredProducts}
             handleClick={handleClick}
           />
+          <section id="shoppingCart">
+            <div>
+              <h2 id="shoppingCart">Carrinho de compras</h2>
+              <ShoppingCart
+                products={shoppingCart}
+                cleanShoppingCart={cleanShoppingCart}
+              />
+            </div>
+          </section>
         </main>
       </div>
     );
