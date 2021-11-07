@@ -4,10 +4,20 @@
 body {
   background-color: #f5f5f5;
 }
+#MenuContainer {
+  width: 1000px;
+  justify-content: center;
+  margin: auto;
+  margin-top: 0;
+}
+#shoppingCart {
+  width: 200px;
+}
 main {
   width: 1200px;
   justify-content: center;
   margin: auto;
+  display: flex;
 }
 header {
   background-color: #e0e0e0;

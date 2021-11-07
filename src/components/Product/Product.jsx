@@ -5,7 +5,13 @@ function Product({ products, id, handleClick, shoppingCart }) {
       <img src={products[id].img} />
       <div class="productName">{products[id].name}</div>
       <div class="productCategory">{products[id].category}</div>
-      <div class="productPrice">R$ {products[id].price}</div>
+      <div class="productPrice">
+        R${" "}
+        {Number(products[id].price).toLocaleString("br", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}
+      </div>
       <button
         onClick={() =>
           handleClick(

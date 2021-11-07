@@ -123,11 +123,14 @@ function App() {
           </button>
         </header>
         <main>
-          <MenuContainer
-            products={products}
-            handleClick={handleClick}
-            shoppingCart={shoppingCart}
-          />
+          <div id="MenuContainer">
+            <MenuContainer
+              products={products}
+              handleClick={handleClick}
+              shoppingCart={shoppingCart}
+            />
+          </div>
+
           <section id="shoppingCart">
             <div>
               <h2 id="shoppingCart">Carrinho de compras</h2>
@@ -159,10 +162,13 @@ function App() {
           </button>
         </header>
         <main>
-          <MenuContainer
-            products={filteredProducts}
-            handleClick={handleClick}
-          />
+          <div id="MenuContainer">
+            <MenuContainer
+              products={filteredProducts}
+              handleClick={handleClick}
+            />
+          </div>
+
           <section id="shoppingCart">
             <div>
               <h2 id="shoppingCart">Carrinho de compras</h2>

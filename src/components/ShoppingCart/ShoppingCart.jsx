@@ -15,13 +15,19 @@ function ShoppingCart({ products, cleanShoppingCart }) {
             </li>
           ))}
         </ul>
-        <div>
+        <div id="total">
           <div>Total</div>
-          <div>R$ {subtotal}</div>
+          <div>
+            R${" "}
+            {Number(subtotal).toLocaleString("br", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </div>
+          <button onClick={() => cleanShoppingCart(products)}>
+            Remover tudo
+          </button>
         </div>
-        <button onClick={() => cleanShoppingCart(products)}>
-          Remover tudo
-        </button>
       </div>
     );
   } else {

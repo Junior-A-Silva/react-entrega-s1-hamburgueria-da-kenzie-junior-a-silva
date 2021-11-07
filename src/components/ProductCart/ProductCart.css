@@ -1,0 +1,17 @@
+.productSCard {
+  width: 257px;
+  height: 12 0px;
+  border: 2px solid #333333;
+  margin: 25px;
+}
+.productSName {
+  color: #333333;
+}
+.productSPrice {
+  color: #27ae60;
+}
+
+.imageProductCart {
+  max-width: 30%;
+  max-height: 30%;
+}
