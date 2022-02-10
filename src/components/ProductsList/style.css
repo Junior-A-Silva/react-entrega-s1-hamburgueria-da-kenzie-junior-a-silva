@@ -1,0 +1,23 @@
+#mainContainer {
+  width: 1400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#productsContainer {
+  width: 960px;
+  margin: 0px;
+  height: 600px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+  list-style: none;
+}
+
+#cart {
+  width: 365px;
+  height: 800px;
+  border: 1px black dashed;
+}
