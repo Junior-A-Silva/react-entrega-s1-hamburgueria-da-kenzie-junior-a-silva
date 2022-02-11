@@ -15,9 +15,6 @@
 li {
   list-style: none;
 }
-
 #cart {
-  width: 365px;
-  height: 800px;
-  border: 1px black dashed;
+  justify-content: right;
 }

@@ -27,8 +27,8 @@ function App() {
             <p id="kenzieLabel">Kenzie</p>
           </div>
           <div id="searchBox">
-            <input></input>
-            <button>Procurar</button>
+            <input id="inputSearch" placeholder="Digite a pesquisa"></input>
+            <button id="btnSearch">Pesquisar</button>
           </div>
         </div>
       </header>

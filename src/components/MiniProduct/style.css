@@ -1,0 +1,139 @@
+#miniProductBox {
+  display: flex;
+  width: 365px;
+  padding: 0;
+  height: 120px;
+  margin-left: 0;
+  margin-right: 20px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+#productBox:focus {
+  border: 2px solid #333333;
+}
+
+#miniProductImg {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 0;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+#miniProductImg > img {
+  width: 100%;
+  margin: 0;
+}
+#miniCocaCola {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 0;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+#miniCocaCola > img {
+  position: relative;
+  top: -40px;
+  left: -20px;
+  width: 120px;
+  margin: 0;
+}
+#miniFantaGuarana {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 0;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+#miniFantaGuarana > img {
+  position: relative;
+  top: -40px;
+  left: -20px;
+  width: 120px;
+  margin: 0;
+}
+#miniOvomaltine {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 0;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+#miniOvomaltine > img {
+  position: relative;
+  top: -9px;
+  width: 100%;
+  margin: 0;
+}
+#miniNameAndCategory {
+  text-align: left;
+  margin: auto;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+#miniProductName {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  top: 4px;
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12pt;
+}
+#miniProductCategory {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  top: 0px;
+  text-align: left;
+  font-style: normal;
+  font-size: 10pt;
+  color: #828282;
+}
+
+#productPrice {
+  font-family: Inter;
+  position: relative;
+  top: 14px;
+  text-align: left;
+  margin-left: 22px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #27ae60;
+}
+
+#removeProductButton {
+  text-align: left;
+  margin-right: 10px;
+  margin-top: 29px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  width: 70px;
+  height: 20px;
+  left: 20px;
+  border: none;
+  background-color: #f5f5f5;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  color: #bdbdbd;
+}
+
+#removeProductButton:hover {
+  cursor: pointer;
+}

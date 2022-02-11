@@ -1,3 +1,4 @@
+import Cart from "../Cart";
 import Product from "../Product";
 import "./style.css";
 const ProductsList = ({ products }) => {
@@ -11,7 +12,9 @@ const ProductsList = ({ products }) => {
             </li>
           ))}
         </ul>
-        <div id="cart"></div>
+        <div id="cart">
+          <Cart products={products} />
+        </div>
       </div>
     </div>
   );

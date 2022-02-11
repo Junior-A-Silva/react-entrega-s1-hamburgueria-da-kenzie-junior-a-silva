@@ -22,7 +22,12 @@ const Product = ({ item }) => {
 
       <p id="productName">{item.name}</p>
       <p id="productCategory">{item.category}</p>
-      <p id="productPrice">R$ {item.price}</p>
+      <p id="productPrice">
+        {item.price.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        })}
+      </p>
 
       <button id="addProductButton">Adicionar</button>
     </div>
