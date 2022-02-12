@@ -1,5 +1,5 @@
 import "./style.css";
-const Product = ({ item }) => {
+const Product = ({ item, addToCart }) => {
   return (
     <div id="productBox">
       {item.id === 4 ? (
@@ -29,7 +29,9 @@ const Product = ({ item }) => {
         })}
       </p>
 
-      <button id="addProductButton">Adicionar</button>
+      <button id="addProductButton" onClick={() => addToCart(item.id)}>
+        Adicionar
+      </button>
     </div>
   );
 };

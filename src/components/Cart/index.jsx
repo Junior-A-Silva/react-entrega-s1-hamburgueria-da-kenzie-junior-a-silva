@@ -1,7 +1,11 @@
 import "./style.css";
 import MiniProduct from "../MiniProduct";
-const Cart = ({ products }) => {
-  if (products === "") {
+const Cart = ({ cartProducts, setCartProducts, setIdCartProducts }) => {
+  const cleanCart = () => {
+    setCartProducts("");
+    setIdCartProducts("");
+  };
+  if (cartProducts === "") {
     return (
       <div id="cartSide">
         <div id="headerCart">
@@ -21,8 +25,8 @@ const Cart = ({ products }) => {
         </div>
         <div id="notEmptyCart">
           <ul>
-            {products.map((item) => (
-              <li key={item.id}>
+            {cartProducts.map((item) => (
+              <li key={item[0].id}>
                 <MiniProduct item={item} />
               </li>
             ))}
@@ -32,15 +36,17 @@ const Cart = ({ products }) => {
             <div id="miniTotal">
               <p id="miniTotalLabel">Total</p>
               <p id="miniValue">
-                {products
-                  .reduce((acc, item) => acc + item.price, 0)
+                {cartProducts
+                  .reduce((acc, item) => acc + item[0].price, 0)
                   .toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
               </p>
             </div>
-            <button id="btnRemove">Remover tudo</button>
+            <button id="btnRemove" onClick={cleanCart}>
+              Remover tudo
+            </button>
           </div>
         </div>
       </div>

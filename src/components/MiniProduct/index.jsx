@@ -1,5 +1,5 @@
 import "./style.css";
-const MiniProduct = ({ item }) => {
+const MiniProduct = ({ item, id }) => {
   return (
     <div id="miniProductBox">
       {item.id === 4 ? (
@@ -16,12 +16,13 @@ const MiniProduct = ({ item }) => {
         </div>
       ) : (
         <div id="miniProductImg">
-          <img src={item.img} />
+          <img src={item[0].img} />
         </div>
       )}
       <div id="miniNameAndCategory">
-        <p id="miniProductName">{item.name}</p>
-        <p id="miniProductCategory">{item.category}</p>
+        <p id="miniProductName">{item[0].name}</p>
+
+        <p id="miniProductCategory">{item[0].category}</p>
       </div>
       <button id="removeProductButton">Remover</button>
     </div>
