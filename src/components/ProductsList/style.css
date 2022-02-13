@@ -1,14 +1,13 @@
 @media screen and (max-width: 425px) {
   #mainContainer {
-    width: 1400px;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   #productsContainer {
-    width: 100%;
-    margin: 0px;
+    max-width: 90vw;
+    margin: 5%;
     height: 370px;
     padding: 0;
     display: flex;
@@ -17,10 +16,6 @@
   }
   li {
     list-style: none;
-  }
-  #cart {
-    justify-content: right;
-    margin-left: 5%;
   }
 }
 @media screen and (min-width: 426px) {

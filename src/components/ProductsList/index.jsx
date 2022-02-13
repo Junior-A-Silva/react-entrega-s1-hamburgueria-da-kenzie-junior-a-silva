@@ -20,9 +20,6 @@ const ProductsList = ({ products, filteredProducts, click }) => {
   const removeFromCart = (productId) => {
     setCartProducts([]);
     setIdCartProducts([]);
-    // encontar o índice do item a ser removido;
-    // remover o item;
-    // passar todo o array de novo para cartProducts
   };
 
   const cleanCart = () => {
