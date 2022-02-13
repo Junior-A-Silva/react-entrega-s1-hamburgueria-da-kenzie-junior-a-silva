@@ -17,6 +17,19 @@ const ProductsList = ({ products, filteredProducts, click }) => {
     }
   };
 
+  const removeFromCart = (productId) => {
+    setCartProducts([]);
+    setIdCartProducts([]);
+    // encontar o índice do item a ser removido;
+    // remover o item;
+    // passar todo o array de novo para cartProducts
+  };
+
+  const cleanCart = () => {
+    setCartProducts("");
+    setIdCartProducts([]);
+  };
+
   if (click === 0) {
     return (
       <div>
@@ -24,14 +37,19 @@ const ProductsList = ({ products, filteredProducts, click }) => {
           <ul id="productsContainer">
             {products.map((item) => (
               <li key={item.id}>
-                <Product item={item} addToCart={addToCart} />
+                <Product
+                  item={item}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                />
               </li>
             ))}
           </ul>
           <div id="cart">
             <Cart
               cartProducts={cartProducts}
-              setCartProducts={setCartProducts}
+              cleanCart={cleanCart}
+              removeFromCart={removeFromCart}
             />
           </div>
         </div>
@@ -44,15 +62,19 @@ const ProductsList = ({ products, filteredProducts, click }) => {
           <ul id="productsContainer">
             {filteredProducts.map((item) => (
               <li key={item.id}>
-                <Product item={item} addToCart={addToCart} />
+                <Product
+                  item={item}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                />
               </li>
             ))}
           </ul>
           <div id="cart">
             <Cart
               cartProducts={cartProducts}
-              setIdCartProducts={setIdCartProducts}
-              setCartProducts={setCartProducts}
+              cleanCart={cleanCart}
+              removeFromCart={removeFromCart}
             />
           </div>
         </div>

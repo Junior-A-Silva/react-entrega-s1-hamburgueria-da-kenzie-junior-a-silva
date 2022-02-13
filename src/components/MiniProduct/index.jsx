@@ -1,5 +1,5 @@
 import "./style.css";
-const MiniProduct = ({ item, id }) => {
+const MiniProduct = ({ item, id, removeFromCart }) => {
   return (
     <div id="miniProductBox">
       {item.id === 4 ? (
@@ -24,7 +24,9 @@ const MiniProduct = ({ item, id }) => {
 
         <p id="miniProductCategory">{item[0].category}</p>
       </div>
-      <button id="removeProductButton">Remover</button>
+      <button id="removeProductButton" onClick={removeFromCart}>
+        Remover
+      </button>
     </div>
   );
 };

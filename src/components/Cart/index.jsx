@@ -1,10 +1,6 @@
 import "./style.css";
 import MiniProduct from "../MiniProduct";
-const Cart = ({ cartProducts, setCartProducts, setIdCartProducts }) => {
-  const cleanCart = () => {
-    setCartProducts("");
-    setIdCartProducts("");
-  };
+const Cart = ({ cartProducts, cleanCart, removeFromCart }) => {
   if (cartProducts === "") {
     return (
       <div id="cartSide">
@@ -27,7 +23,7 @@ const Cart = ({ cartProducts, setCartProducts, setIdCartProducts }) => {
           <ul>
             {cartProducts.map((item) => (
               <li key={item[0].id}>
-                <MiniProduct item={item} />
+                <MiniProduct item={item} removeFromCart={removeFromCart} />
               </li>
             ))}
           </ul>
